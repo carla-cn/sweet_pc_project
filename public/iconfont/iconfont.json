@@ -1,0 +1,16 @@
+{
+  "id": "2646455",
+  "name": "sweet",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9120858",
+      "name": "shopping-cart-fill copy",
+      "font_class": "shopping-cart-fillcopy",
+      "unicode": "e859",
+      "unicode_decimal": 59481
+    }
+  ]
+}
