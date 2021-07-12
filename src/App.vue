@@ -17,9 +17,16 @@
 .center {
   width: 1170px;
   margin: 0 auto;
+  box-sizing: border-box;
   // background-color: pink;
   -moz-user-select:none;
-   -webkit-user-select:none;
-   user-select:none;
+  -webkit-user-select:none;
+  user-select:none;
+}
+
+p {
+  -moz-user-select:none;
+  -webkit-user-select:none;
+  user-select:none;
 }
 </style>

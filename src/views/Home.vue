@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <my-header select="1"></my-header>
-    <div class="main">
+    <div class="main" style="margin-top: 2px;">
+      <!-- 动画广告 -->
       <div class="banner center">
         <div class="animation-obj1">
           <a href="#"><img src="../assets/index/banner_pic2.png" alt=""></a>
@@ -31,14 +32,36 @@
         </div>
         <img src="../assets/index/banner_logo.png" alt="" class="animation-obj9">
       </div>
+      <!-- 热卖新品 -->
       <div class="hot-sale center">
         <h2>MENU<i>热卖新品</i></h2>
         <div class="products">
           <div class="cake">
-            <div class="block">
+            <el-carousel height="500px" indicator-position="none" arrow="hover">
+              <el-carousel-item v-for="item in 3" :key="item">
+                <my-card :sweetness="sweetness"></my-card>
+              </el-carousel-item>
+            </el-carousel>
+          </div>
+          <div class="flower">
+            <div class="top">
+              <h3>幸福时刻要有思味特</h3>
+              <p>做一棵开花的树，站在四季的风里，带着微笑，带着满足，感谢每一米阳光，感谢每一滴雨露，只要心是简单的，世界就不会复杂，只要心是善良的，生活就会孕育生香。</p>
+            </div>
+            <div class="bottom">
+              <div class="bottom-item" v-for="i in 3" :key="i">
+                <my-card></my-card>
+              </div>
             </div>
           </div>
-          <div class="flower"></div>
+        </div>
+        <div class="move-show">
+          <ul>
+            <li v-for="i in 4" :key="i">
+              <my-card></my-card>
+              <h3 class="flower-name"><a href="#">Alive&Well 祝好花集/仲夏夜之梦/韩式混搭花篮</a></h3>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -48,7 +71,7 @@
 export default {
   data() {
     return {
-      
+      sweetness: 3
     }
   }
 }
@@ -61,6 +84,8 @@ $backgroundIconActiveColor: $SandyBrown;
 $boxColor: $White;
 $textColor1: $Silver;
 $textColor2: $SaddleBrown;
+$textColor3: $Peru;
+$textColor4: $SandyBrown;
 @keyframes mymove { 
   from {opacity:0;}
   to {opacity:1;}
@@ -190,15 +215,104 @@ $textColor2: $SaddleBrown;
         }
       }
       .products {
-        height: 600px;
-        margin-top: 30px;
+        height: 500px;
+        margin-top: 40px;
         .cake {
           float: left;
           height: 100%;
+          width: 400px;
+          background-color: $boxColor;
+          font-size: 16px;
+          .card {
+            margin-top: 40px;
+            img {
+              height: 300px;
+            }
+          }
         }
         .flower {
           float: right;
           height: 100%;
+          width: 760px;
+          .top {
+            height: 24%;
+            background-color: $boxColor;
+            padding: 26px 30px;
+            color: $textColor1;
+            box-sizing: border-box;
+            h3 {
+              font-size: 18px;
+              font-weight: 400;
+              text-align: center;
+              margin-bottom: 10px;
+            }
+            p {
+              font-size: 14px;
+              line-height: 1.4;
+              text-indent: 2;
+              text-indent: 2em;
+            }
+          }
+          .bottom {
+            height: 312px;
+            margin-top: 10px;
+            padding-top: 58px;
+            background-color: $boxColor;
+            font-size: 16px;
+            .bottom-item {
+              float: left;
+              width: 33%;
+              padding: 20px 0;
+              &:nth-child(2) {
+                border-left: 1px dotted $textColor3;
+                border-right: 1px dotted $textColor3;
+              }
+              .card {
+                img {
+                  height: 180px;
+                }
+                .price {
+                margin-top: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .move-show {
+        height: 280px;
+        margin-top: 10px;
+        padding: 24px 10px;
+        background-color: $boxColor;
+        overflow: hidden;
+        box-sizing: border-box;
+        ul {
+          li {
+            float: left;
+            width: 226px;
+            padding: 0 30px;
+            text-align: center;
+            .card {
+              img {
+                height: 180px;
+              }
+              .price {
+                display: none;
+              }
+            }
+            h3 {
+              position: relative;
+              z-index: 1;
+              font-weight: 400;
+              a {
+                font-size: 16px;
+                color: $textColor3;
+                &:hover {
+                  color: $textColor4;
+                }
+              }
+            }
+          }
         }
       }
     }

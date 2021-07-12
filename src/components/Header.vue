@@ -11,10 +11,10 @@
           <!-- 未登录时显示  登录  注册 -->
           <div class="login">
             <span>
-              <a href="#">LOGIN IN登录</a>
+              <router-link to="/login">LOGIN IN登录</router-link>
             </span>
             <span>
-              <a href="#">SIGN UP注册</a>
+              <router-link to="register">SIGN UP注册</router-link>
             </span>
           </div>
           <!-- 登录成功后分别显示  手机号  登录成功 -->
@@ -26,7 +26,7 @@
         <ul>
           <li :class="selectId==1?'active': ''" @click="isSelected(1)"><router-link to="/">Home Page<br />首页</router-link></li>                                  
           <li :class="selectId==2?'active': ''" @click="isSelected(2)"><router-link to="/products">All Products<br />全部产品</router-link></li>    
-          <li><a href="#"><img src="../assets/logo.png" alt /></a></li>                      
+          <li><a href="#"><img src="../assets/logo.png" style="position: relative; z-index: 10;"></a></li>                      
           <li :class="selectId==3?'active': ''" @click="isSelected(3)"><router-link to="/events">Latest Events<br />最新活动</router-link></li>                                  
           <li :class="selectId==4?'active': ''" @click="isSelected(4)"><router-link to="/brand">Brand Story<br />品牌理念</router-link></li>    
         </ul>
