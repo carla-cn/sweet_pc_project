@@ -21,10 +21,10 @@
           <canvas width="100" height="50" @click="draw(verificationCode)" ref="canvas"></canvas>
         </div>
         <button @click="register">点击注册</button>
-      </div>
-      <div class="login center">
-        <img src="../assets/register/zhuce_07.jpg" alt="">
-        <span>我已经注册为会员,<br>现在就 <a href="#">登录</a></span>
+        <div class="login center">
+          <img src="../assets/register/zhuce_07.jpg" alt="">
+          <span>我已经注册为会员,<br>现在就 <a href="#">登录</a></span>
+        </div>
       </div>
     </div>
   </div>
@@ -173,13 +173,13 @@ $backgroundColor: $Beige;
 $boxColor: $White;
 .register {
   .content {
-    position: relative;
     margin-top: 2px;
     height: 620px;
     background-color: $backgroundColor;
     padding-top: 100px;
     box-sizing: border-box;
     .register-info {
+      position: relative;
       height: 500px;
       background-color: $boxColor;
       padding: 60px 100px;
@@ -251,23 +251,23 @@ $boxColor: $White;
           opacity: 0.8;
         }
       }
-    }
-    .login {
-      position: absolute;
-      top: 300px;
-      right: 400px;
-      width: 180px;
-      span {
+      .login {
         position: absolute;
-        top: 4px;
-        right: 0;
-        font-size: 16px;
-        color: #666;
-        a {
-          color: $textColor3;
-          font-weight: 700;
-          &:hover {
-            opacity: 0.8;
+        top: 200px;
+        right: 200px;
+        width: 180px;
+        span {
+          position: absolute;
+          top: 4px;
+          right: 0;
+          font-size: 16px;
+          color: #666;
+          a {
+            color: $textColor3;
+            font-weight: 700;
+            &:hover {
+              opacity: 0.8;
+            }
           }
         }
       }

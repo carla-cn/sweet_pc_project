@@ -10,7 +10,7 @@
         <div class="pwd">
           <input type="password" v-model="password" placeholder="密码">
         </div>
-        <div class="login-btn"><input type="button" value="点击登录"></div>
+        <div class="login-btn"><input type="button" value="点击登录" @click="login"></div>
       </div>
     </div>
   </div>
@@ -22,6 +22,19 @@ export default {
     return {
       phoneNum: '',
       password: ''
+    }
+  },
+  methods: {
+    login() {
+      this.axios.post('/users/login', {phone: this.phoneNum, upwd: this.password}).then(result => {
+        this.password = '';
+        if (res.data.code == 201) {
+          alert('res.data.msg');
+        } else {
+          alert('登录成功，点击进入首页');
+          this.$router.push('./Home.vue');
+        }      
+      })
     }
   }
 }
